@@ -27,7 +27,6 @@ d3.select("#start").on("click", function() {
     if (timer != null) return;
     startTime = Date.now();
     timer = setInterval(tick, 50); 
-    
 });
 
 d3.select("#reset").on("click", function() {
