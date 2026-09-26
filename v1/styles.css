@@ -1,0 +1,7 @@
+  body { font-family: arial; text-align: center; }
+
+  .boundary {
+    stroke: black;
+    stroke-width: 1px;
+    fill: none;
+  }

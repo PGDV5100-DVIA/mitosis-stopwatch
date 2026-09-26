@@ -1,6 +1,7 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -13,19 +14,25 @@
 </head>
 
 <body>
-  <header></header>
-  <section>
-      <h1>Mitosis Stopwatch</h1>
-      <div id="stopwatch">00:00.0</div>
-      <button id="start">Start</button>
-      <button id="reset">Reset</button>
-      <div>
-        <svg id="chart"></svg>
-      </div>
-  </section>
+  <svg id="chart">
+    <defs>
+      <filter id="goo" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  0 0 0 20 -9" result="goo" />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+      </filter>
+    </defs>
+  </svg>
+  <div id="timer">
+    <span id="time">00:00.0</span>
+    <button id="reset">RESET</button>
+  </div>
 
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="script.js"></script>
 </body>
-</html>
 
+</html>
